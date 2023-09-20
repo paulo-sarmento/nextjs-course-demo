@@ -3,24 +3,24 @@ import { MongoClient } from "mongodb";
 
 import MeetupList from "../components/meetups/MeetupList";
 
-const DUMMY_MEETUPS = [
-  {
-    id: "m1",
-    title: "A First Meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/c/ca/Lehesten_2012_x14.JPG",
-    address: "Some address 5, 12345 Some City",
-    description: "This is a first meetup!",
-  },
-  {
-    id: "m2",
-    title: "A First Meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/c/ca/Lehesten_2012_x14.JPG",
-    address: "Some address 10, 6789 Some City",
-    description: "This is a second meetup!",
-  },
-];
+// const DUMMY_MEETUPS = [
+//   {
+//     id: "m1",
+//     title: "A First Meetup",
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/c/ca/Lehesten_2012_x14.JPG",
+//     address: "Some address 5, 12345 Some City",
+//     description: "This is a first meetup!",
+//   },
+//   {
+//     id: "m2",
+//     title: "A First Meetup",
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/c/ca/Lehesten_2012_x14.JPG",
+//     address: "Some address 10, 6789 Some City",
+//     description: "This is a second meetup!",
+//   },
+// ];
 
 const HomePage = (props) => {
   return (
@@ -59,6 +59,7 @@ export const getStaticProps = async () => {
         id: meetup._id.toString(),
       })),
     },
+    revalidate: 1,
   };
 };
 
